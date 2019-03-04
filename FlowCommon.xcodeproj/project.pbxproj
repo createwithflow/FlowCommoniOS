@@ -10,7 +10,7 @@
 		A6B5836F222CDEEF005EDD4E /* FlowCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B58366222CDEEF005EDD4E /* FlowCommon.framework */; };
 		A6B58376222CDEEF005EDD4E /* FlowCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = A6B58368222CDEEF005EDD4E /* FlowCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6B58392222CDFD8005EDD4E /* CGPathSVGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B58391222CDFD7005EDD4E /* CGPathSVGTests.swift */; };
-		A6B583A2222DB3F8005EDD4E /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = A6B583A1222DB3F8005EDD4E /* Resources */; };
+		A6B583A2222DB3F8005EDD4E /* FlowCommonFiles in Resources */ = {isa = PBXBuildFile; fileRef = A6B583A1222DB3F8005EDD4E /* FlowCommonFiles */; };
 		A6B583AF222DB636005EDD4E /* NSShadow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583A5222DB635005EDD4E /* NSShadow+Extension.swift */; };
 		A6B583B0222DB636005EDD4E /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583A6222DB635005EDD4E /* ShapeView.swift */; };
 		A6B583B1222DB636005EDD4E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583A7222DB635005EDD4E /* UIImage+Extension.swift */; };
@@ -40,17 +40,17 @@
 		A6B5836E222CDEEF005EDD4E /* FlowCommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowCommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B58375222CDEEF005EDD4E /* TestsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TestsInfo.plist; sourceTree = "<group>"; };
 		A6B58391222CDFD7005EDD4E /* CGPathSVGTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPathSVGTests.swift; sourceTree = "<group>"; };
-		A6B583A1222DB3F8005EDD4E /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
-		A6B583A5222DB635005EDD4E /* NSShadow+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSShadow+Extension.swift"; path = "FlowCommon/Resources/NSShadow+Extension.swift"; sourceTree = SOURCE_ROOT; };
-		A6B583A6222DB635005EDD4E /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShapeView.swift; path = FlowCommon/Resources/ShapeView.swift; sourceTree = SOURCE_ROOT; };
-		A6B583A7222DB635005EDD4E /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Extension.swift"; path = "FlowCommon/Resources/UIImage+Extension.swift"; sourceTree = SOURCE_ROOT; };
-		A6B583A8222DB635005EDD4E /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = FlowCommon/Resources/Timeline.swift; sourceTree = SOURCE_ROOT; };
-		A6B583A9222DB635005EDD4E /* CGPath+SVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPath+SVG.swift"; path = "FlowCommon/Resources/CGPath+SVG.swift"; sourceTree = SOURCE_ROOT; };
-		A6B583AA222DB635005EDD4E /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = FlowCommon/Resources/Animation.swift; sourceTree = SOURCE_ROOT; };
-		A6B583AB222DB635005EDD4E /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = FlowCommon/Resources/Sound.swift; sourceTree = SOURCE_ROOT; };
-		A6B583AC222DB635005EDD4E /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextView.swift; path = FlowCommon/Resources/TextView.swift; sourceTree = SOURCE_ROOT; };
-		A6B583AD222DB635005EDD4E /* NSMutableParagraphStyle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSMutableParagraphStyle+Extension.swift"; path = "FlowCommon/Resources/NSMutableParagraphStyle+Extension.swift"; sourceTree = SOURCE_ROOT; };
-		A6B583AE222DB636005EDD4E /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "FlowCommon/Resources/UIView+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		A6B583A1222DB3F8005EDD4E /* FlowCommonFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FlowCommonFiles; sourceTree = "<group>"; };
+		A6B583A5222DB635005EDD4E /* NSShadow+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSShadow+Extension.swift"; path = "FlowCommon/FlowCommonFiles/NSShadow+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		A6B583A6222DB635005EDD4E /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShapeView.swift; path = FlowCommon/FlowCommonFiles/ShapeView.swift; sourceTree = SOURCE_ROOT; };
+		A6B583A7222DB635005EDD4E /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Extension.swift"; path = "FlowCommon/FlowCommonFiles/UIImage+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		A6B583A8222DB635005EDD4E /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = FlowCommon/FlowCommonFiles/Timeline.swift; sourceTree = SOURCE_ROOT; };
+		A6B583A9222DB635005EDD4E /* CGPath+SVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPath+SVG.swift"; path = "FlowCommon/FlowCommonFiles/CGPath+SVG.swift"; sourceTree = SOURCE_ROOT; };
+		A6B583AA222DB635005EDD4E /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = FlowCommon/FlowCommonFiles/Animation.swift; sourceTree = SOURCE_ROOT; };
+		A6B583AB222DB635005EDD4E /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = FlowCommon/FlowCommonFiles/Sound.swift; sourceTree = SOURCE_ROOT; };
+		A6B583AC222DB635005EDD4E /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextView.swift; path = FlowCommon/FlowCommonFiles/TextView.swift; sourceTree = SOURCE_ROOT; };
+		A6B583AD222DB635005EDD4E /* NSMutableParagraphStyle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSMutableParagraphStyle+Extension.swift"; path = "FlowCommon/FlowCommonFiles/NSMutableParagraphStyle+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		A6B583AE222DB636005EDD4E /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "FlowCommon/FlowCommonFiles/UIView+Extension.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				A6B583A4222DB5FC005EDD4E /* Sources */,
-				A6B583A1222DB3F8005EDD4E /* Resources */,
+				A6B583A1222DB3F8005EDD4E /* FlowCommonFiles */,
 			);
 			path = FlowCommon;
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B583A2222DB3F8005EDD4E /* Resources in Resources */,
+				A6B583A2222DB3F8005EDD4E /* FlowCommonFiles in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
