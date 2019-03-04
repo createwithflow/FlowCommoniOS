@@ -1,4 +1,4 @@
-// Copyright © 2016-19 JABT Labs Inc.
+// Copyright © 2016-2019 JABT Labs Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -19,12 +19,17 @@
 
 import UIKit
 
-extension UIView {
-    func setTransform(scaleX: CGFloat, scaleY: CGFloat, rotationAngle: CGFloat) {
-        var transform = CGAffineTransform.identity
-        transform = transform.concatenating(CGAffineTransform(scaleX: scaleX, y: 1.0))
-        transform = transform.concatenating(CGAffineTransform(scaleX: 1.0, y: scaleY))
-        transform = transform.concatenating(CGAffineTransform(rotationAngle: rotationAngle))
-        self.transform = transform
+extension UIImage {
+    func resized(to size: CGSize) -> UIImage {
+        let rect = CGRect(origin: .zero, size: size)
+        let vertical = CGAffineTransform(a: 1, b: 0, c: 0, d: -1, tx: 0, ty: size.height)
+        return UIGraphicsImageRenderer(size: size).image { _ in
+            let ctx = UIGraphicsGetCurrentContext()
+            ctx?.saveGState()
+            ctx?.concatenate(vertical)
+            draw(in: rect)
+            ctx?.restoreGState()
+            UIGraphicsEndImageContext()
+        }
     }
 }

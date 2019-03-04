@@ -1,4 +1,4 @@
-// Copyright © 2016-19 JABT Labs Inc.
+// Copyright © 2016-2019 JABT Labs Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -17,15 +17,29 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import AVFoundation
+import UIKit
 
-public final class Sound {
-
-    static func playAudio(_ audio: AVAudioPlayer, delay: TimeInterval) {
-        audio.prepareToPlay()
-        let time = DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        DispatchQueue.main.asyncAfter(deadline: time) {
-            audio.play()
-        }
+extension NSMutableParagraphStyle {
+    convenience init(alignment: NSTextAlignment,
+                     firstLineHeadIndent: CGFloat,
+                     headIndent: CGFloat,
+                     tailIndent: CGFloat,
+                     lineHeightMultiple: CGFloat,
+                     maximumLineHeight: CGFloat,
+                     minimumLineHeight: CGFloat,
+                     lineSpacing: CGFloat,
+                     paragraphSpacing: CGFloat,
+                     paragraphSpacingBefore: CGFloat) {
+        self.init()
+        self.alignment = alignment
+        self.firstLineHeadIndent = firstLineHeadIndent
+        self.headIndent = headIndent
+        self.tailIndent = tailIndent
+        self.lineHeightMultiple = lineHeightMultiple
+        self.maximumLineHeight = maximumLineHeight
+        self.minimumLineHeight = minimumLineHeight
+        self.lineSpacing = lineSpacing
+        self.paragraphSpacing = paragraphSpacing
+        self.paragraphSpacingBefore = paragraphSpacingBefore
     }
 }

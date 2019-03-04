@@ -1,4 +1,4 @@
-// Copyright © 2016-2019 JABT
+// Copyright © 2016-2019 JABT Labs Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -17,22 +17,15 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import FlowCommon
-import QuartzCore
-import XCTest
+import AVFoundation
 
-class CGPathSVGTests: XCTestCase {
-    func testLine() {
-        let path = CGPathCreateWithSVGString("M100,100 L200,200")
-        let bounds = path!.boundingBox
-        XCTAssertEqual(bounds, CGRect(x: 100, y: 100, width: 100, height: 100))
+public final class Sound {
+
+    static func playAudio(_ audio: AVAudioPlayer, delay: TimeInterval) {
+        audio.prepareToPlay()
+        let time = DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            audio.play()
+        }
     }
-
-    func testSquare() {
-        let path = CGPathCreateWithSVGString("M-50,-50 l100,0 0,100 -100,0 0-100z")
-        let bounds = path!.boundingBox
-        XCTAssertEqual(bounds, CGRect(x: -50, y: -50, width: 100, height: 100))
-        XCTAssertTrue(path!.contains(CGPoint()))
-    }
-
 }

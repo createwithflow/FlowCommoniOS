@@ -1,4 +1,4 @@
-// Copyright © 2016-19 JABT Labs Inc.
+// Copyright © 2016-2019 JABT Labs Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -17,14 +17,14 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+import UIKit
 
-//! Project version number for FlowCommon.
-FOUNDATION_EXPORT double FlowCommonVersionNumber;
-
-//! Project version string for FlowCommon.
-FOUNDATION_EXPORT const unsigned char FlowCommonVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <FlowCommon/PublicHeader.h>
-
-
+extension UIView {
+    func setTransform(scaleX: CGFloat, scaleY: CGFloat, rotationAngle: CGFloat) {
+        var transform = CGAffineTransform.identity
+        transform = transform.concatenating(CGAffineTransform(scaleX: scaleX, y: 1.0))
+        transform = transform.concatenating(CGAffineTransform(scaleX: 1.0, y: scaleY))
+        transform = transform.concatenating(CGAffineTransform(rotationAngle: rotationAngle))
+        self.transform = transform
+    }
+}

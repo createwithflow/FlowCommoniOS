@@ -1,4 +1,4 @@
-// Copyright © 2016-19 JABT Labs Inc.
+// Copyright © 2016-2019 JABT Labs Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -17,13 +17,14 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import UIKit
+#import <Foundation/Foundation.h>
 
-extension NSShadow {
-    convenience init(blurRadius: CGFloat, offset: CGSize, color: UIColor) {
-        self.init()
-        shadowBlurRadius = blurRadius
-        shadowOffset = offset
-        shadowColor = color
-    }
-}
+//! Project version number for FlowCommon.
+FOUNDATION_EXPORT double FlowCommonVersionNumber;
+
+//! Project version string for FlowCommon.
+FOUNDATION_EXPORT const unsigned char FlowCommonVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <FlowCommon/PublicHeader.h>
+
+
