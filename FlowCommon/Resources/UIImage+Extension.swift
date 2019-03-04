@@ -23,25 +23,13 @@ extension UIImage {
     func resized(to size: CGSize) -> UIImage {
         let rect = CGRect(origin: .zero, size: size)
         let vertical = CGAffineTransform(a: 1, b: 0, c: 0, d: -1, tx: 0, ty: size.height)
-        if #available(iOS 10.0, *) {
-            return UIGraphicsImageRenderer(size: size).image { _ in
-                let ctx = UIGraphicsGetCurrentContext()
-                ctx?.saveGState()
-                ctx?.concatenate(vertical)
-                draw(in: rect)
-                ctx?.restoreGState()
-                UIGraphicsEndImageContext()
-            }
-        } else {
-            UIGraphicsBeginImageContextWithOptions(size, false, 0.0);
+        return UIGraphicsImageRenderer(size: size).image { _ in
             let ctx = UIGraphicsGetCurrentContext()
             ctx?.saveGState()
             ctx?.concatenate(vertical)
-            draw(in: CGRect(origin: CGPoint.zero, size: CGSize(width: size.width, height: size.height)))
-            let newImage = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
+            draw(in: rect)
             ctx?.restoreGState()
-            return newImage
+            UIGraphicsEndImageContext()
         }
     }
 }
