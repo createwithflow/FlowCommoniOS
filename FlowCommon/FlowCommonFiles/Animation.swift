@@ -26,6 +26,17 @@ open class Animation: NSObject, CAAnimationDelegate {
     /// The CALayer whose properties are animated.
     open var layer: CALayer
 
+    /// Specifies whether or not the timeline animations should autoreverse
+    var autoreverses: Bool {
+        set {
+            for keyframeAnimation in keyframeAnimations {
+                keyframeAnimation.autoreverses = newValue
+            }
+        } get {
+            return keyframeAnimations.first?.autoreverses ?? false
+        }
+    }
+
     /// The current time of the animation. i.e. what time is being displayed.
     var time: TimeInterval {
         return layer.timeOffset
@@ -105,8 +116,8 @@ open class Animation: NSObject, CAAnimationDelegate {
 
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
-            let duration = keyframeAnimations.first?.duration ?? 0
-            offset(to: duration)
+            let time = autoreverses ? 0 : (keyframeAnimations.first?.duration ?? 0)
+            offset(to: time)
         }
     }
 }
