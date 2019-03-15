@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6AF97ED223C29690011F722 /* CALayerContentsGravity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AF97EC223C29690011F722 /* CALayerContentsGravity+Extension.swift */; };
 		A6B5836F222CDEEF005EDD4E /* FlowCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B58366222CDEEF005EDD4E /* FlowCommon.framework */; };
 		A6B58376222CDEEF005EDD4E /* FlowCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = A6B58368222CDEEF005EDD4E /* FlowCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6B58392222CDFD8005EDD4E /* CGPathSVGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B58391222CDFD7005EDD4E /* CGPathSVGTests.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A6AF97EC223C29690011F722 /* CALayerContentsGravity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayerContentsGravity+Extension.swift"; sourceTree = "<group>"; };
 		A6B58366222CDEEF005EDD4E /* FlowCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlowCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B58368222CDEEF005EDD4E /* FlowCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlowCommon.h; sourceTree = "<group>"; };
 		A6B58369222CDEEF005EDD4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,7 +122,9 @@
 		A6B583A4222DB5FC005EDD4E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A6B58368222CDEEF005EDD4E /* FlowCommon.h */,
 				A6B583AA222DB635005EDD4E /* Animation.swift */,
+				A6AF97EC223C29690011F722 /* CALayerContentsGravity+Extension.swift */,
 				A6B583A9222DB635005EDD4E /* CGPath+SVG.swift */,
 				A6B583AD222DB635005EDD4E /* NSMutableParagraphStyle+Extension.swift */,
 				A6B583A5222DB635005EDD4E /* NSShadow+Extension.swift */,
@@ -130,7 +134,6 @@
 				A6B583A8222DB635005EDD4E /* Timeline.swift */,
 				A6B583A7222DB635005EDD4E /* UIImage+Extension.swift */,
 				A6B583AE222DB636005EDD4E /* UIView+Extension.swift */,
-				A6B58368222CDEEF005EDD4E /* FlowCommon.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				A6B583B2222DB636005EDD4E /* Timeline.swift in Sources */,
 				A6B583B3222DB636005EDD4E /* CGPath+SVG.swift in Sources */,
 				A6B583B7222DB636005EDD4E /* NSMutableParagraphStyle+Extension.swift in Sources */,
+				A6AF97ED223C29690011F722 /* CALayerContentsGravity+Extension.swift in Sources */,
 				A6B583B1222DB636005EDD4E /* UIImage+Extension.swift in Sources */,
 				A6B583B0222DB636005EDD4E /* ShapeView.swift in Sources */,
 				A6B583B4222DB636005EDD4E /* Animation.swift in Sources */,
