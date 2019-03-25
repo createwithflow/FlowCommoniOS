@@ -26,16 +26,14 @@ open class Animation: NSObject, CAAnimationDelegate {
     /// The CALayer whose properties are animated.
     open var layer: CALayer
 
-    /// Specifies whether or not the timeline animations should autoreverse
-    var autoreverses: Bool {
-        set {
-            for keyframeAnimation in keyframeAnimations {
-                keyframeAnimation.autoreverses = newValue
-            }
-        } get {
-            return keyframeAnimations.first?.autoreverses ?? false
-        }
-    }
+    /// Specifies whether or not the animation should autoreverse.
+    var autoreverses: Bool
+
+    /// Determines the number of times the animation will repeat.
+    ///
+    /// May be fractional. If the repeatCount is 0, it is ignored.
+    /// Setting this property to greatestFiniteMagnitude will cause the animation to repeat forever.
+    var repeatCount: Float
 
     /// The current time of the animation. i.e. what time is being displayed.
     var time: TimeInterval {
@@ -49,9 +47,12 @@ open class Animation: NSObject, CAAnimationDelegate {
 
     // MARK: - Initializers
 
-    public init(layer: CALayer, keyframeAnimations: [CAKeyframeAnimation]) {
+    public init(layer: CALayer, keyframeAnimations: [CAKeyframeAnimation], autoreverses: Bool = false, repeatCount: Float = 0) {
         self.layer = layer
         self.keyframeAnimations = keyframeAnimations
+        self.autoreverses = autoreverses
+        self.repeatCount = repeatCount
+
         super.init()
         keyframeAnimations.forEach(configure)
         reset()
@@ -61,6 +62,8 @@ open class Animation: NSObject, CAAnimationDelegate {
         keyframeAnimation.delegate = self
         keyframeAnimation.isRemovedOnCompletion = false
         keyframeAnimation.fillMode = .both
+        keyframeAnimation.autoreverses = autoreverses
+        keyframeAnimation.repeatCount = repeatCount
     }
 
     // MARK: - Playing & Resetting Animation

@@ -27,6 +27,15 @@ public class Timeline {
     public let animations: [Animation]
     public let sounds: [(sound: AVAudioPlayer, delay: TimeInterval)]
 
+    /// Specifies whether or not the timeline's animations autoreverse.
+    public let autoreverses: Bool
+
+    /// Determines the number of times the timeline's animations will repeat.
+    ///
+    /// May be fractional. If the repeatCount is 0, it is ignored.
+    /// Setting this property to greatestFiniteMagnitude will cause the timeline to repeat forever.
+    public let repeatCount: Float
+
     public var time: TimeInterval {
         return animations.first?.time ?? 0
     }
@@ -37,11 +46,15 @@ public class Timeline {
 
     // MARK: - Initializers
 
-    public init(view: UIView, animations: [Animation], sounds: [(sound: AVAudioPlayer, delay: TimeInterval)], duration: TimeInterval) {
+    public init(view: UIView, animationsByLayer: [CALayer: [CAKeyframeAnimation]], sounds: [(sound: AVAudioPlayer, delay: TimeInterval)], duration: TimeInterval, autoreverses: Bool = false, repeatCount: Float = 0) {
         self.view = view
-        self.animations = animations
         self.duration = duration
         self.sounds = sounds
+        self.autoreverses = autoreverses
+        self.repeatCount = repeatCount
+        self.animations = animationsByLayer.map {
+            Animation(layer: $0.0, keyframeAnimations: $0.1, autoreverses: autoreverses, repeatCount: repeatCount)
+        }
     }
 
     // MARK: - Timeline Playback controls
