@@ -21,6 +21,9 @@
 		A6B583B6222DB636005EDD4E /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583AC222DB635005EDD4E /* TextView.swift */; };
 		A6B583B7222DB636005EDD4E /* NSMutableParagraphStyle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583AD222DB635005EDD4E /* NSMutableParagraphStyle+Extension.swift */; };
 		A6B583B8222DB636005EDD4E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583AE222DB636005EDD4E /* UIView+Extension.swift */; };
+		A6BAA98422B2F0CB0079DE26 /* CAKeyframeAnimation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BAA98122B2F0CB0079DE26 /* CAKeyframeAnimation+Extension.swift */; };
+		A6BAA98522B2F0CB0079DE26 /* CAMediaTimingFunction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BAA98222B2F0CB0079DE26 /* CAMediaTimingFunction+Extension.swift */; };
+		A6BAA98622B2F0CB0079DE26 /* CATransaction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BAA98322B2F0CB0079DE26 /* CATransaction+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		A6B583AC222DB635005EDD4E /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextView.swift; path = FlowCommon/FlowCommonFiles/TextView.swift; sourceTree = SOURCE_ROOT; };
 		A6B583AD222DB635005EDD4E /* NSMutableParagraphStyle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSMutableParagraphStyle+Extension.swift"; path = "FlowCommon/FlowCommonFiles/NSMutableParagraphStyle+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		A6B583AE222DB636005EDD4E /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "FlowCommon/FlowCommonFiles/UIView+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		A6BAA98122B2F0CB0079DE26 /* CAKeyframeAnimation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CAKeyframeAnimation+Extension.swift"; path = "FlowCommon/FlowCommonFiles/CAKeyframeAnimation+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		A6BAA98222B2F0CB0079DE26 /* CAMediaTimingFunction+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CAMediaTimingFunction+Extension.swift"; path = "FlowCommon/FlowCommonFiles/CAMediaTimingFunction+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		A6BAA98322B2F0CB0079DE26 /* CATransaction+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CATransaction+Extension.swift"; path = "FlowCommon/FlowCommonFiles/CATransaction+Extension.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +126,12 @@
 		A6B583A4222DB5FC005EDD4E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				A6B58368222CDEEF005EDD4E /* FlowCommon.h */,
 				A6B583AA222DB635005EDD4E /* Animation.swift */,
+				A6BAA98122B2F0CB0079DE26 /* CAKeyframeAnimation+Extension.swift */,
+				A6BAA98222B2F0CB0079DE26 /* CAMediaTimingFunction+Extension.swift */,
+				A6BAA98322B2F0CB0079DE26 /* CATransaction+Extension.swift */,
 				A6B583A9222DB635005EDD4E /* CGPath+SVG.swift */,
+				A6B58368222CDEEF005EDD4E /* FlowCommon.h */,
 				A6B583AD222DB635005EDD4E /* NSMutableParagraphStyle+Extension.swift */,
 				A6B583A5222DB635005EDD4E /* NSShadow+Extension.swift */,
 				A6B583A6222DB635005EDD4E /* ShapeView.swift */,
@@ -249,8 +258,11 @@
 				A6B583B5222DB636005EDD4E /* Sound.swift in Sources */,
 				A6B583B6222DB636005EDD4E /* TextView.swift in Sources */,
 				A6B583B2222DB636005EDD4E /* Timeline.swift in Sources */,
+				A6BAA98422B2F0CB0079DE26 /* CAKeyframeAnimation+Extension.swift in Sources */,
 				A6B583B3222DB636005EDD4E /* CGPath+SVG.swift in Sources */,
+				A6BAA98622B2F0CB0079DE26 /* CATransaction+Extension.swift in Sources */,
 				A6B583B7222DB636005EDD4E /* NSMutableParagraphStyle+Extension.swift in Sources */,
+				A6BAA98522B2F0CB0079DE26 /* CAMediaTimingFunction+Extension.swift in Sources */,
 				A6B583B1222DB636005EDD4E /* UIImage+Extension.swift in Sources */,
 				A6B583B0222DB636005EDD4E /* ShapeView.swift in Sources */,
 				A6B583B4222DB636005EDD4E /* Animation.swift in Sources */,
