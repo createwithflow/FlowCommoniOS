@@ -125,18 +125,9 @@ open class Animation: NSObject, CAAnimationDelegate {
     }
 }
 
-extension CATransaction {
-    static func suppressAnimations(actions: () -> Void) {
-        begin()
-        setAnimationDuration(0)
-        actions()
-        commit()
+public extension Animation {
+    var reversed: Animation {
+        let reversedKeyFrameAnimations = keyframeAnimations.map { $0.reversed }
+        return Animation(layer: layer, keyframeAnimations: reversedKeyFrameAnimations)
     }
-}
-
-extension CAMediaTimingFunction {
-    public static let linear = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-    public static let easeIn = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
-    public static let easeOut = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
-    public static let easeInEaseOut = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
 }
