@@ -120,6 +120,7 @@
 		A6B583A4222DB5FC005EDD4E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A6B58368222CDEEF005EDD4E /* FlowCommon.h */,
 				A6B583AA222DB635005EDD4E /* Animation.swift */,
 				A6B583A9222DB635005EDD4E /* CGPath+SVG.swift */,
 				A6B583AD222DB635005EDD4E /* NSMutableParagraphStyle+Extension.swift */,
@@ -130,7 +131,6 @@
 				A6B583A8222DB635005EDD4E /* Timeline.swift */,
 				A6B583A7222DB635005EDD4E /* UIImage+Extension.swift */,
 				A6B583AE222DB636005EDD4E /* UIView+Extension.swift */,
-				A6B58368222CDEEF005EDD4E /* FlowCommon.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
