@@ -46,15 +46,22 @@ public class Timeline {
 
     // MARK: - Initializers
 
-    public init(view: UIView, animationsByLayer: [CALayer: [CAKeyframeAnimation]], sounds: [(sound: AVAudioPlayer, delay: TimeInterval)], duration: TimeInterval, autoreverses: Bool = false, repeatCount: Float = 0) {
+    public convenience init(view: UIView, animationsByLayer: [CALayer: [CAKeyframeAnimation]], sounds: [(sound: AVAudioPlayer, delay: TimeInterval)], duration: TimeInterval, autoreverses: Bool = false, repeatCount: Float = 0) {
+
+        let animations = animationsByLayer.map {
+            Animation(layer: $0.0, keyframeAnimations: $0.1, autoreverses: autoreverses, repeatCount: repeatCount)
+        }
+
+        self.init(view: view, animations: animations, sounds: sounds, duration: duration, autoreverses: autoreverses, repeatCount: repeatCount)
+    }
+
+    fileprivate init(view: UIView, animations: [Animation], sounds: [(sound: AVAudioPlayer, delay: TimeInterval)], duration: TimeInterval, autoreverses: Bool, repeatCount: Float) {
         self.view = view
         self.duration = duration
         self.sounds = sounds
         self.autoreverses = autoreverses
         self.repeatCount = repeatCount
-        self.animations = animationsByLayer.map {
-            Animation(layer: $0.0, keyframeAnimations: $0.1, autoreverses: autoreverses, repeatCount: repeatCount)
-        }
+        self.animations = animations
     }
 
     // MARK: - Timeline Playback controls
