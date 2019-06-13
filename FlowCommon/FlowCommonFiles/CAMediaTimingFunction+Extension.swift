@@ -21,6 +21,12 @@ import Foundation
 import UIKit
 
 public extension CAMediaTimingFunction {
+    public static let linear = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+    public static let easeIn = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+    public static let easeOut = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+    public static let easeInEaseOut = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+
+
     var reversed: CAMediaTimingFunction {
         let (c1, c2) = controlPoints
         let x1 = Float(1 - c2.x)
