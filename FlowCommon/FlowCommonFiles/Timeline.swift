@@ -95,3 +95,10 @@ public class Timeline {
         }
     }
 }
+
+public extension Timeline {
+    var reversed: Timeline {
+        let reversedAnimations = animations.map { $0.reversed }
+        return Timeline(view: view, animations: reversedAnimations, sounds: sounds, duration: duration, autoreverses: autoreverses, repeatCount: repeatCount)
+    }
+}
