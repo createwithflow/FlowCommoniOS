@@ -26,7 +26,6 @@ public extension CAMediaTimingFunction {
     static let easeOut = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
     static let easeInEaseOut = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
 
-
     var reversed: CAMediaTimingFunction {
         let (c1, c2) = controlPoints
         let x1 = Float(1 - c2.x)
