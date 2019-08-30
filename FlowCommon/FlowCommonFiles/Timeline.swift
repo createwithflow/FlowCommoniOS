@@ -55,7 +55,7 @@ public class Timeline {
         self.init(view: view, animations: animations, sounds: sounds, duration: duration, autoreverses: autoreverses, repeatCount: repeatCount)
     }
 
-    fileprivate init(view: UIView, animations: [Animation], sounds: [(sound: AVAudioPlayer, delay: TimeInterval)], duration: TimeInterval, autoreverses: Bool, repeatCount: Float) {
+    init(view: UIView, animations: [Animation], sounds: [(sound: AVAudioPlayer, delay: TimeInterval)], duration: TimeInterval, autoreverses: Bool, repeatCount: Float) {
         self.view = view
         self.duration = duration
         self.sounds = sounds
@@ -101,9 +101,8 @@ public class Timeline {
             animation.offset(to: time)
         }
     }
-}
 
-public extension Timeline {
+    /// Returns a reverses version of `self`.
     var reversed: Timeline {
         let reversedAnimations = animations.map { $0.reversed }
         return Timeline(view: view, animations: reversedAnimations, sounds: sounds, duration: duration, autoreverses: autoreverses, repeatCount: repeatCount)
