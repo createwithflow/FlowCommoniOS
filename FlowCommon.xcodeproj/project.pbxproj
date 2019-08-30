@@ -126,12 +126,12 @@
 		A6B583A4222DB5FC005EDD4E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A6B58368222CDEEF005EDD4E /* FlowCommon.h */,
 				A6B583AA222DB635005EDD4E /* Animation.swift */,
 				A6BAA98122B2F0CB0079DE26 /* CAKeyframeAnimation+Extension.swift */,
 				A6BAA98222B2F0CB0079DE26 /* CAMediaTimingFunction+Extension.swift */,
 				A6BAA98322B2F0CB0079DE26 /* CATransaction+Extension.swift */,
 				A6B583A9222DB635005EDD4E /* CGPath+SVG.swift */,
-				A6B58368222CDEEF005EDD4E /* FlowCommon.h */,
 				A6B583AD222DB635005EDD4E /* NSMutableParagraphStyle+Extension.swift */,
 				A6B583A5222DB635005EDD4E /* NSShadow+Extension.swift */,
 				A6B583A6222DB635005EDD4E /* ShapeView.swift */,

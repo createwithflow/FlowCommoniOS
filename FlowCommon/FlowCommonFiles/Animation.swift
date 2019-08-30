@@ -35,6 +35,8 @@ open class Animation: NSObject, CAAnimationDelegate {
     /// Setting this property to greatestFiniteMagnitude will cause the animation to repeat forever.
     var repeatCount: Float
 
+    weak var delegate: AnimationDelegate?
+
     /// The current time of the animation. i.e. what time is being displayed.
     var time: TimeInterval {
         return layer.timeOffset
@@ -102,8 +104,13 @@ open class Animation: NSObject, CAAnimationDelegate {
 
     /// Adds all the animations to `layer` so they can be played.
     private func addAllAnimations() {
-        for keyframeAnimation in keyframeAnimations {
-            layer.add(keyframeAnimation, forKey: keyframeAnimation.keyPath)
+        DispatchQueue.main.async { [weak self] in
+            guard let keyframeAnimations = self?.keyframeAnimations, let layer = self?.layer else {
+                return
+            }
+            for keyframeAnimation in keyframeAnimations {
+                layer.add(keyframeAnimation, forKey: keyframeAnimation.keyPath)
+            }
         }
     }
 
@@ -118,9 +125,16 @@ open class Animation: NSObject, CAAnimationDelegate {
     // MARK: - CAAnimationDelegate
 
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag {
-            let time = autoreverses ? 0 : (keyframeAnimations.first?.duration ?? 0)
-            offset(to: time)
+        guard flag else {
+            return
+        }
+
+        let time = autoreverses ? 0 : (keyframeAnimations.first?.duration ?? 0)
+        offset(to: time)
+
+        if let keyframeAnimation = anim as? CAKeyframeAnimation,
+            keyframeAnimations.first?.keyPath == keyframeAnimation.keyPath {
+            delegate?.didStop(animation: self)
         }
     }
 }
@@ -130,4 +144,8 @@ public extension Animation {
         let reversedKeyFrameAnimations = keyframeAnimations.map { $0.reversed }
         return Animation(layer: layer, keyframeAnimations: reversedKeyFrameAnimations)
     }
+}
+
+protocol AnimationDelegate: class {
+    func didStop(animation: Animation)
 }

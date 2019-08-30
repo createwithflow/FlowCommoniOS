@@ -44,6 +44,8 @@ public class Timeline {
         return animations.first?.playing ?? false
     }
 
+    public weak var delegate: TimelineDelegate?
+
     // MARK: - Initializers
 
     public convenience init(view: UIView, animationsByLayer: [CALayer: [CAKeyframeAnimation]], sounds: [(sound: AVAudioPlayer, delay: TimeInterval)], duration: TimeInterval, autoreverses: Bool = false, repeatCount: Float = 0) {
@@ -62,6 +64,7 @@ public class Timeline {
         self.autoreverses = autoreverses
         self.repeatCount = repeatCount
         self.animations = animations
+        self.animations.first?.delegate = self
     }
 
     // MARK: - Timeline Playback controls
@@ -71,6 +74,7 @@ public class Timeline {
         for animation in animations {
             animation.reset()
         }
+        delegate?.didReset(timeline: self)
     }
 
     /// Resume playing the timeline.
@@ -79,6 +83,7 @@ public class Timeline {
         for animation in animations {
             animation.play()
         }
+        delegate?.didPlay(timeline: self)
     }
 
     private func playSounds() {
@@ -92,6 +97,7 @@ public class Timeline {
         for animation in animations {
             animation.pause()
         }
+        delegate?.didPause(timeline: self)
     }
 
     /// Show timeline at time `time`.
@@ -100,6 +106,7 @@ public class Timeline {
         for animation in animations {
             animation.offset(to: time)
         }
+        delegate?.didOffset(timeline: self, to: time)
     }
 
     /// Returns a reverses version of `self`.
@@ -107,4 +114,31 @@ public class Timeline {
         let reversedAnimations = animations.map { $0.reversed }
         return Timeline(view: view, animations: reversedAnimations, sounds: sounds, duration: duration, autoreverses: autoreverses, repeatCount: repeatCount)
     }
+}
+
+extension Timeline: AnimationDelegate {
+    func didStop(animation: Animation) {
+        delegate?.didStop(timeline: self)
+    }
+}
+
+public protocol TimelineDelegate: class {
+    /// Informs the delegate that the timeline `timeline` was reset.
+    func didReset(timeline: Timeline)
+
+    /// Informs the delegate that the timeline `timeline` did start playing.
+    func didPlay(timeline: Timeline)
+
+    /// Informs the delegate that the timeline `timeline` was paused.
+    func didPause(timeline: Timeline)
+
+    /// Informs the delegate that the timeline `timeline` was offset.
+    ///
+    /// - Parameters:
+    ///   - timeline: The timeline which was offset.
+    ///   - time: The time to which `timeline` was offset to.
+    func didOffset(timeline: Timeline, to time: TimeInterval)
+
+    /// Informs the delegate that the timeline `timeline` was stopped because it completed its active duration.
+    func didStop(timeline: Timeline)
 }
