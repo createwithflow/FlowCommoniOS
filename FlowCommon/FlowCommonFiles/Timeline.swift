@@ -21,7 +21,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-public class Timeline {
+open class Timeline {
     public var view: UIView
     public var duration: TimeInterval
     public let animations: [Animation]
