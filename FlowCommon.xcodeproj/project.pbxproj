@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831A77142452517F003E9690 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 831A77132452517F003E9690 /* LICENSE */; };
 		A6B5836F222CDEEF005EDD4E /* FlowCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B58366222CDEEF005EDD4E /* FlowCommon.framework */; };
 		A6B58376222CDEEF005EDD4E /* FlowCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = A6B58368222CDEEF005EDD4E /* FlowCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6B58392222CDFD8005EDD4E /* CGPathSVGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B58391222CDFD7005EDD4E /* CGPathSVGTests.swift */; };
@@ -37,7 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		831A771224524DDB003E9690 /* FlowCommon.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FlowCommon.podspec; sourceTree = "<group>"; };
+		831A771224524DDB003E9690 /* FlowCommon.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FlowCommon.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		831A77132452517F003E9690 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A6B58366222CDEEF005EDD4E /* FlowCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlowCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B58368222CDEEF005EDD4E /* FlowCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlowCommon.h; sourceTree = "<group>"; };
 		A6B58369222CDEEF005EDD4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		A6B583A0222DB241005EDD4E /* FlowCommon */ = {
 			isa = PBXGroup;
 			children = (
+				831A77132452517F003E9690 /* LICENSE */,
 				831A771224524DDB003E9690 /* FlowCommon.podspec */,
 				A6B583A4222DB5FC005EDD4E /* Sources */,
 				A6B583A1222DB3F8005EDD4E /* FlowCommonFiles */,
@@ -239,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				831A77142452517F003E9690 /* LICENSE in Resources */,
 				A6B583A2222DB3F8005EDD4E /* FlowCommonFiles in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
