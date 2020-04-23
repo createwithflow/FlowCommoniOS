@@ -20,7 +20,7 @@
 import UIKit
 
 extension CATransaction {
-    static func suppressAnimations(actions: () -> Void) {
+    static public func suppressAnimations(actions: () -> Void) {
         begin()
         setAnimationDuration(0)
         actions()
