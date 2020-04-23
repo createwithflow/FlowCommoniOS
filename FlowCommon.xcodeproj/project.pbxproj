@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		831A771224524DDB003E9690 /* FlowCommon.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FlowCommon.podspec; sourceTree = "<group>"; };
 		A6B58366222CDEEF005EDD4E /* FlowCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlowCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B58368222CDEEF005EDD4E /* FlowCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlowCommon.h; sourceTree = "<group>"; };
 		A6B58369222CDEEF005EDD4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 		A6B583A0222DB241005EDD4E /* FlowCommon */ = {
 			isa = PBXGroup;
 			children = (
+				831A771224524DDB003E9690 /* FlowCommon.podspec */,
 				A6B583A4222DB5FC005EDD4E /* Sources */,
 				A6B583A1222DB3F8005EDD4E /* FlowCommonFiles */,
 			);
