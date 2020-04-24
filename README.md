@@ -3,6 +3,12 @@ A major goal behind our efforts here at Flow is to produce the cleanest code pos
 
 To make things as clean as possible, we include with every export a few files that extend the native functionality of iOS classes.
 
+## Installation
+
+### CocoaPods
+To install `FlowCommoniOS` using CocoaPods add `pod 'FlowCommoniOS'` to your projects Podfile and run `pod install` in your projects directory.
+If you've never used CocoaPods before refer to https://guides.cocoapods.org/using/getting-started.html.
+
 ## Classes
 
 There are 6 classes that are required for running any iOS project that uses Flow timelines. A few of these are relatively small subclasses, such as `TextView`. There are also a few larger classes, such as `Animation` and `Timeline` that are critical for bringing lovely Flow functionality to your apps.
