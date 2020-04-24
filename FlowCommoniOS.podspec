@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'FlowCommoniOS'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'Common files required for running any iOS project that uses Flow timelines.'
 
   s.homepage         = 'https://github.com/SlantDesign/FlowCommoniOS.git'
