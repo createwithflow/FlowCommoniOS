@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A6B5836F222CDEEF005EDD4E /* FlowCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B58366222CDEEF005EDD4E /* FlowCommon.framework */; };
+		A6B5836F222CDEEF005EDD4E /* FlowCommoniOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B58366222CDEEF005EDD4E /* FlowCommoniOS.framework */; };
 		A6B58376222CDEEF005EDD4E /* FlowCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = A6B58368222CDEEF005EDD4E /* FlowCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6B58392222CDFD8005EDD4E /* CGPathSVGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B58391222CDFD7005EDD4E /* CGPathSVGTests.swift */; };
 		A6B583A2222DB3F8005EDD4E /* FlowCommonFiles in Resources */ = {isa = PBXBuildFile; fileRef = A6B583A1222DB3F8005EDD4E /* FlowCommonFiles */; };
@@ -37,10 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A6B58366222CDEEF005EDD4E /* FlowCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlowCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6B58366222CDEEF005EDD4E /* FlowCommoniOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlowCommoniOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B58368222CDEEF005EDD4E /* FlowCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlowCommon.h; sourceTree = "<group>"; };
 		A6B58369222CDEEF005EDD4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6B5836E222CDEEF005EDD4E /* FlowCommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowCommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6B5836E222CDEEF005EDD4E /* FlowCommoniOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowCommoniOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B58375222CDEEF005EDD4E /* TestsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TestsInfo.plist; sourceTree = "<group>"; };
 		A6B58391222CDFD7005EDD4E /* CGPathSVGTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPathSVGTests.swift; sourceTree = "<group>"; };
 		A6B583A1222DB3F8005EDD4E /* FlowCommonFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FlowCommonFiles; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B5836F222CDEEF005EDD4E /* FlowCommon.framework in Frameworks */,
+				A6B5836F222CDEEF005EDD4E /* FlowCommoniOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,8 +91,8 @@
 		A6B58348222CDE0C005EDD4E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A6B58366222CDEEF005EDD4E /* FlowCommon.framework */,
-				A6B5836E222CDEEF005EDD4E /* FlowCommonTests.xctest */,
+				A6B58366222CDEEF005EDD4E /* FlowCommoniOS.framework */,
+				A6B5836E222CDEEF005EDD4E /* FlowCommoniOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,9 +158,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A6B58365222CDEEF005EDD4E /* FlowCommon */ = {
+		A6B58365222CDEEF005EDD4E /* FlowCommoniOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6B58377222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommon" */;
+			buildConfigurationList = A6B58377222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommoniOS" */;
 			buildPhases = (
 				A6B58361222CDEEF005EDD4E /* Headers */,
 				A6B58362222CDEEF005EDD4E /* Sources */,
@@ -171,14 +171,14 @@
 			);
 			dependencies = (
 			);
-			name = FlowCommon;
+			name = FlowCommoniOS;
 			productName = FlowCommon;
-			productReference = A6B58366222CDEEF005EDD4E /* FlowCommon.framework */;
+			productReference = A6B58366222CDEEF005EDD4E /* FlowCommoniOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A6B5836D222CDEEF005EDD4E /* FlowCommonTests */ = {
+		A6B5836D222CDEEF005EDD4E /* FlowCommoniOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6B5837A222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommonTests" */;
+			buildConfigurationList = A6B5837A222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommoniOSTests" */;
 			buildPhases = (
 				A6B5836A222CDEEF005EDD4E /* Sources */,
 				A6B5836B222CDEEF005EDD4E /* Frameworks */,
@@ -189,9 +189,9 @@
 			dependencies = (
 				A6B58371222CDEEF005EDD4E /* PBXTargetDependency */,
 			);
-			name = FlowCommonTests;
+			name = FlowCommoniOSTests;
 			productName = FlowCommonTests;
-			productReference = A6B5836E222CDEEF005EDD4E /* FlowCommonTests.xctest */;
+			productReference = A6B5836E222CDEEF005EDD4E /* FlowCommoniOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -213,7 +213,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A6B58341222CDE0C005EDD4E /* Build configuration list for PBXProject "FlowCommon" */;
+			buildConfigurationList = A6B58341222CDE0C005EDD4E /* Build configuration list for PBXProject "FlowCommoniOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -226,8 +226,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A6B58365222CDEEF005EDD4E /* FlowCommon */,
-				A6B5836D222CDEEF005EDD4E /* FlowCommonTests */,
+				A6B58365222CDEEF005EDD4E /* FlowCommoniOS */,
+				A6B5836D222CDEEF005EDD4E /* FlowCommoniOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -284,7 +284,7 @@
 /* Begin PBXTargetDependency section */
 		A6B58371222CDEEF005EDD4E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A6B58365222CDEEF005EDD4E /* FlowCommon */;
+			target = A6B58365222CDEEF005EDD4E /* FlowCommoniOS */;
 			targetProxy = A6B58370222CDEEF005EDD4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -515,7 +515,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A6B58341222CDE0C005EDD4E /* Build configuration list for PBXProject "FlowCommon" */ = {
+		A6B58341222CDE0C005EDD4E /* Build configuration list for PBXProject "FlowCommoniOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6B58359222CDE0C005EDD4E /* Debug */,
@@ -524,7 +524,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6B58377222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommon" */ = {
+		A6B58377222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommoniOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6B58378222CDEEF005EDD4E /* Debug */,
@@ -533,7 +533,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6B5837A222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommonTests" */ = {
+		A6B5837A222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommoniOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6B5837B222CDEEF005EDD4E /* Debug */,

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A6B58365222CDEEF005EDD4E"
-               BuildableName = "FlowCommon.framework"
-               BlueprintName = "FlowCommon"
-               ReferencedContainer = "container:FlowCommon.xcodeproj">
+               BuildableName = "FlowCommoniOS.framework"
+               BlueprintName = "FlowCommoniOS"
+               ReferencedContainer = "container:FlowCommoniOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,9 +31,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6B58365222CDEEF005EDD4E"
-            BuildableName = "FlowCommon.framework"
-            BlueprintName = "FlowCommon"
-            ReferencedContainer = "container:FlowCommon.xcodeproj">
+            BuildableName = "FlowCommoniOS.framework"
+            BlueprintName = "FlowCommoniOS"
+            ReferencedContainer = "container:FlowCommoniOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -42,9 +42,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A6B5836D222CDEEF005EDD4E"
-               BuildableName = "FlowCommonTests.xctest"
-               BlueprintName = "FlowCommonTests"
-               ReferencedContainer = "container:FlowCommon.xcodeproj">
+               BuildableName = "FlowCommoniOSTests.xctest"
+               BlueprintName = "FlowCommoniOSTests"
+               ReferencedContainer = "container:FlowCommoniOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -63,9 +63,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6B58365222CDEEF005EDD4E"
-            BuildableName = "FlowCommon.framework"
-            BlueprintName = "FlowCommon"
-            ReferencedContainer = "container:FlowCommon.xcodeproj">
+            BuildableName = "FlowCommoniOS.framework"
+            BlueprintName = "FlowCommoniOS"
+            ReferencedContainer = "container:FlowCommoniOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </LaunchAction>
@@ -79,9 +79,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6B58365222CDEEF005EDD4E"
-            BuildableName = "FlowCommon.framework"
-            BlueprintName = "FlowCommon"
-            ReferencedContainer = "container:FlowCommon.xcodeproj">
+            BuildableName = "FlowCommoniOS.framework"
+            BlueprintName = "FlowCommoniOS"
+            ReferencedContainer = "container:FlowCommoniOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
