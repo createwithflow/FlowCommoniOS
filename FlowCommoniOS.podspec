@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'FlowCommon/FlowCommonFiles/*.swift'
+  s.source_files = 'Sources/FlowCommoniOSFiles/*.swift'
   s.swift_version = '5.0'
 end

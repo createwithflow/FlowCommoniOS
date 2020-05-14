@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A6B5836F222CDEEF005EDD4E /* FlowCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B58366222CDEEF005EDD4E /* FlowCommon.framework */; };
+		A6B5836F222CDEEF005EDD4E /* FlowCommoniOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B58366222CDEEF005EDD4E /* FlowCommoniOS.framework */; };
 		A6B58376222CDEEF005EDD4E /* FlowCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = A6B58368222CDEEF005EDD4E /* FlowCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6B58392222CDFD8005EDD4E /* CGPathSVGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B58391222CDFD7005EDD4E /* CGPathSVGTests.swift */; };
-		A6B583A2222DB3F8005EDD4E /* FlowCommonFiles in Resources */ = {isa = PBXBuildFile; fileRef = A6B583A1222DB3F8005EDD4E /* FlowCommonFiles */; };
-		A6B583AF222DB636005EDD4E /* NSShadow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583A5222DB635005EDD4E /* NSShadow+Extension.swift */; };
-		A6B583B0222DB636005EDD4E /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583A6222DB635005EDD4E /* ShapeView.swift */; };
-		A6B583B1222DB636005EDD4E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583A7222DB635005EDD4E /* UIImage+Extension.swift */; };
-		A6B583B2222DB636005EDD4E /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583A8222DB635005EDD4E /* Timeline.swift */; };
-		A6B583B3222DB636005EDD4E /* CGPath+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583A9222DB635005EDD4E /* CGPath+SVG.swift */; };
-		A6B583B4222DB636005EDD4E /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583AA222DB635005EDD4E /* Animation.swift */; };
-		A6B583B5222DB636005EDD4E /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583AB222DB635005EDD4E /* Sound.swift */; };
-		A6B583B6222DB636005EDD4E /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583AC222DB635005EDD4E /* TextView.swift */; };
-		A6B583B7222DB636005EDD4E /* NSMutableParagraphStyle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583AD222DB635005EDD4E /* NSMutableParagraphStyle+Extension.swift */; };
-		A6B583B8222DB636005EDD4E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B583AE222DB636005EDD4E /* UIView+Extension.swift */; };
-		A6BAA98422B2F0CB0079DE26 /* CAKeyframeAnimation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BAA98122B2F0CB0079DE26 /* CAKeyframeAnimation+Extension.swift */; };
-		A6BAA98522B2F0CB0079DE26 /* CAMediaTimingFunction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BAA98222B2F0CB0079DE26 /* CAMediaTimingFunction+Extension.swift */; };
-		A6BAA98622B2F0CB0079DE26 /* CATransaction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BAA98322B2F0CB0079DE26 /* CATransaction+Extension.swift */; };
+		A6EF89A2246DC21D00207FA9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A6EF899F246DC21D00207FA9 /* README.md */; };
+		A6EF89A3246DC21D00207FA9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A6EF89A0246DC21D00207FA9 /* LICENSE */; };
+		A6EF89A4246DC21D00207FA9 /* FlowCommoniOS.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A6EF89A1246DC21D00207FA9 /* FlowCommoniOS.podspec */; };
+		A6EF89FA246DC76B00207FA9 /* CGPath+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89ED246DC76B00207FA9 /* CGPath+SVG.swift */; };
+		A6EF89FB246DC76B00207FA9 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89EE246DC76B00207FA9 /* ShapeView.swift */; };
+		A6EF89FC246DC76B00207FA9 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89EF246DC76B00207FA9 /* Animation.swift */; };
+		A6EF89FD246DC76B00207FA9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89F0246DC76B00207FA9 /* UIView+Extension.swift */; };
+		A6EF89FE246DC76B00207FA9 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89F1246DC76B00207FA9 /* UIImage+Extension.swift */; };
+		A6EF89FF246DC76B00207FA9 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89F2246DC76B00207FA9 /* Timeline.swift */; };
+		A6EF8A00246DC76B00207FA9 /* CAKeyframeAnimation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89F3246DC76B00207FA9 /* CAKeyframeAnimation+Extension.swift */; };
+		A6EF8A01246DC76B00207FA9 /* NSMutableParagraphStyle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89F4246DC76B00207FA9 /* NSMutableParagraphStyle+Extension.swift */; };
+		A6EF8A02246DC76B00207FA9 /* CATransaction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89F5246DC76B00207FA9 /* CATransaction+Extension.swift */; };
+		A6EF8A03246DC76B00207FA9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89F6246DC76B00207FA9 /* TextView.swift */; };
+		A6EF8A04246DC76B00207FA9 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89F7246DC76B00207FA9 /* Sound.swift */; };
+		A6EF8A05246DC76B00207FA9 /* CAMediaTimingFunction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89F8246DC76B00207FA9 /* CAMediaTimingFunction+Extension.swift */; };
+		A6EF8A06246DC76B00207FA9 /* NSShadow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF89F9246DC76B00207FA9 /* NSShadow+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,26 +39,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A6B58366222CDEEF005EDD4E /* FlowCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlowCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6B58366222CDEEF005EDD4E /* FlowCommoniOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlowCommoniOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B58368222CDEEF005EDD4E /* FlowCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlowCommon.h; sourceTree = "<group>"; };
 		A6B58369222CDEEF005EDD4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6B5836E222CDEEF005EDD4E /* FlowCommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowCommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6B5836E222CDEEF005EDD4E /* FlowCommoniOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowCommoniOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B58375222CDEEF005EDD4E /* TestsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TestsInfo.plist; sourceTree = "<group>"; };
 		A6B58391222CDFD7005EDD4E /* CGPathSVGTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPathSVGTests.swift; sourceTree = "<group>"; };
-		A6B583A1222DB3F8005EDD4E /* FlowCommonFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FlowCommonFiles; sourceTree = "<group>"; };
-		A6B583A5222DB635005EDD4E /* NSShadow+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSShadow+Extension.swift"; path = "FlowCommon/FlowCommonFiles/NSShadow+Extension.swift"; sourceTree = SOURCE_ROOT; };
-		A6B583A6222DB635005EDD4E /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShapeView.swift; path = FlowCommon/FlowCommonFiles/ShapeView.swift; sourceTree = SOURCE_ROOT; };
-		A6B583A7222DB635005EDD4E /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Extension.swift"; path = "FlowCommon/FlowCommonFiles/UIImage+Extension.swift"; sourceTree = SOURCE_ROOT; };
-		A6B583A8222DB635005EDD4E /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = FlowCommon/FlowCommonFiles/Timeline.swift; sourceTree = SOURCE_ROOT; };
-		A6B583A9222DB635005EDD4E /* CGPath+SVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPath+SVG.swift"; path = "FlowCommon/FlowCommonFiles/CGPath+SVG.swift"; sourceTree = SOURCE_ROOT; };
-		A6B583AA222DB635005EDD4E /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = FlowCommon/FlowCommonFiles/Animation.swift; sourceTree = SOURCE_ROOT; };
-		A6B583AB222DB635005EDD4E /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = FlowCommon/FlowCommonFiles/Sound.swift; sourceTree = SOURCE_ROOT; };
-		A6B583AC222DB635005EDD4E /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextView.swift; path = FlowCommon/FlowCommonFiles/TextView.swift; sourceTree = SOURCE_ROOT; };
-		A6B583AD222DB635005EDD4E /* NSMutableParagraphStyle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSMutableParagraphStyle+Extension.swift"; path = "FlowCommon/FlowCommonFiles/NSMutableParagraphStyle+Extension.swift"; sourceTree = SOURCE_ROOT; };
-		A6B583AE222DB636005EDD4E /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "FlowCommon/FlowCommonFiles/UIView+Extension.swift"; sourceTree = SOURCE_ROOT; };
-		A6BAA98122B2F0CB0079DE26 /* CAKeyframeAnimation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CAKeyframeAnimation+Extension.swift"; path = "FlowCommon/FlowCommonFiles/CAKeyframeAnimation+Extension.swift"; sourceTree = SOURCE_ROOT; };
-		A6BAA98222B2F0CB0079DE26 /* CAMediaTimingFunction+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CAMediaTimingFunction+Extension.swift"; path = "FlowCommon/FlowCommonFiles/CAMediaTimingFunction+Extension.swift"; sourceTree = SOURCE_ROOT; };
-		A6BAA98322B2F0CB0079DE26 /* CATransaction+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CATransaction+Extension.swift"; path = "FlowCommon/FlowCommonFiles/CATransaction+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		A6EF899F246DC21D00207FA9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A6EF89A0246DC21D00207FA9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A6EF89A1246DC21D00207FA9 /* FlowCommoniOS.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlowCommoniOS.podspec; sourceTree = "<group>"; };
+		A6EF89ED246DC76B00207FA9 /* CGPath+SVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPath+SVG.swift"; sourceTree = "<group>"; };
+		A6EF89EE246DC76B00207FA9 /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
+		A6EF89EF246DC76B00207FA9 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		A6EF89F0246DC76B00207FA9 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		A6EF89F1246DC76B00207FA9 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		A6EF89F2246DC76B00207FA9 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		A6EF89F3246DC76B00207FA9 /* CAKeyframeAnimation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAKeyframeAnimation+Extension.swift"; sourceTree = "<group>"; };
+		A6EF89F4246DC76B00207FA9 /* NSMutableParagraphStyle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableParagraphStyle+Extension.swift"; sourceTree = "<group>"; };
+		A6EF89F5246DC76B00207FA9 /* CATransaction+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CATransaction+Extension.swift"; sourceTree = "<group>"; };
+		A6EF89F6246DC76B00207FA9 /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		A6EF89F7246DC76B00207FA9 /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		A6EF89F8246DC76B00207FA9 /* CAMediaTimingFunction+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAMediaTimingFunction+Extension.swift"; sourceTree = "<group>"; };
+		A6EF89F9246DC76B00207FA9 /* NSShadow+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSShadow+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B5836F222CDEEF005EDD4E /* FlowCommon.framework in Frameworks */,
+				A6B5836F222CDEEF005EDD4E /* FlowCommoniOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +85,10 @@
 		A6B5833D222CDE0C005EDD4E = {
 			isa = PBXGroup;
 			children = (
-				A6B583A0222DB241005EDD4E /* FlowCommon */,
+				A6EF89A1246DC21D00207FA9 /* FlowCommoniOS.podspec */,
+				A6EF89A0246DC21D00207FA9 /* LICENSE */,
+				A6EF899F246DC21D00207FA9 /* README.md */,
+				A6B583A4222DB5FC005EDD4E /* Sources */,
 				A6B58393222CE00B005EDD4E /* Metadata */,
 				A6B58372222CDEEF005EDD4E /* FlowCommonTests */,
 				A6B58348222CDE0C005EDD4E /* Products */,
@@ -91,8 +98,8 @@
 		A6B58348222CDE0C005EDD4E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A6B58366222CDEEF005EDD4E /* FlowCommon.framework */,
-				A6B5836E222CDEEF005EDD4E /* FlowCommonTests.xctest */,
+				A6B58366222CDEEF005EDD4E /* FlowCommoniOS.framework */,
+				A6B5836E222CDEEF005EDD4E /* FlowCommoniOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,34 +121,33 @@
 			path = Metadata;
 			sourceTree = "<group>";
 		};
-		A6B583A0222DB241005EDD4E /* FlowCommon */ = {
-			isa = PBXGroup;
-			children = (
-				A6B583A4222DB5FC005EDD4E /* Sources */,
-				A6B583A1222DB3F8005EDD4E /* FlowCommonFiles */,
-			);
-			path = FlowCommon;
-			sourceTree = "<group>";
-		};
 		A6B583A4222DB5FC005EDD4E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A6EF89EC246DC76B00207FA9 /* FlowCommoniOSFiles */,
 				A6B58368222CDEEF005EDD4E /* FlowCommon.h */,
-				A6B583AA222DB635005EDD4E /* Animation.swift */,
-				A6BAA98122B2F0CB0079DE26 /* CAKeyframeAnimation+Extension.swift */,
-				A6BAA98222B2F0CB0079DE26 /* CAMediaTimingFunction+Extension.swift */,
-				A6BAA98322B2F0CB0079DE26 /* CATransaction+Extension.swift */,
-				A6B583A9222DB635005EDD4E /* CGPath+SVG.swift */,
-				A6B583AD222DB635005EDD4E /* NSMutableParagraphStyle+Extension.swift */,
-				A6B583A5222DB635005EDD4E /* NSShadow+Extension.swift */,
-				A6B583A6222DB635005EDD4E /* ShapeView.swift */,
-				A6B583AB222DB635005EDD4E /* Sound.swift */,
-				A6B583AC222DB635005EDD4E /* TextView.swift */,
-				A6B583A8222DB635005EDD4E /* Timeline.swift */,
-				A6B583A7222DB635005EDD4E /* UIImage+Extension.swift */,
-				A6B583AE222DB636005EDD4E /* UIView+Extension.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		A6EF89EC246DC76B00207FA9 /* FlowCommoniOSFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A6EF89ED246DC76B00207FA9 /* CGPath+SVG.swift */,
+				A6EF89EE246DC76B00207FA9 /* ShapeView.swift */,
+				A6EF89EF246DC76B00207FA9 /* Animation.swift */,
+				A6EF89F0246DC76B00207FA9 /* UIView+Extension.swift */,
+				A6EF89F1246DC76B00207FA9 /* UIImage+Extension.swift */,
+				A6EF89F2246DC76B00207FA9 /* Timeline.swift */,
+				A6EF89F3246DC76B00207FA9 /* CAKeyframeAnimation+Extension.swift */,
+				A6EF89F4246DC76B00207FA9 /* NSMutableParagraphStyle+Extension.swift */,
+				A6EF89F5246DC76B00207FA9 /* CATransaction+Extension.swift */,
+				A6EF89F6246DC76B00207FA9 /* TextView.swift */,
+				A6EF89F7246DC76B00207FA9 /* Sound.swift */,
+				A6EF89F8246DC76B00207FA9 /* CAMediaTimingFunction+Extension.swift */,
+				A6EF89F9246DC76B00207FA9 /* NSShadow+Extension.swift */,
+			);
+			path = FlowCommoniOSFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,9 +164,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A6B58365222CDEEF005EDD4E /* FlowCommon */ = {
+		A6B58365222CDEEF005EDD4E /* FlowCommoniOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6B58377222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommon" */;
+			buildConfigurationList = A6B58377222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommoniOS" */;
 			buildPhases = (
 				A6B58361222CDEEF005EDD4E /* Headers */,
 				A6B58362222CDEEF005EDD4E /* Sources */,
@@ -171,14 +177,14 @@
 			);
 			dependencies = (
 			);
-			name = FlowCommon;
+			name = FlowCommoniOS;
 			productName = FlowCommon;
-			productReference = A6B58366222CDEEF005EDD4E /* FlowCommon.framework */;
+			productReference = A6B58366222CDEEF005EDD4E /* FlowCommoniOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A6B5836D222CDEEF005EDD4E /* FlowCommonTests */ = {
+		A6B5836D222CDEEF005EDD4E /* FlowCommoniOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6B5837A222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommonTests" */;
+			buildConfigurationList = A6B5837A222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommoniOSTests" */;
 			buildPhases = (
 				A6B5836A222CDEEF005EDD4E /* Sources */,
 				A6B5836B222CDEEF005EDD4E /* Frameworks */,
@@ -189,9 +195,9 @@
 			dependencies = (
 				A6B58371222CDEEF005EDD4E /* PBXTargetDependency */,
 			);
-			name = FlowCommonTests;
+			name = FlowCommoniOSTests;
 			productName = FlowCommonTests;
-			productReference = A6B5836E222CDEEF005EDD4E /* FlowCommonTests.xctest */;
+			productReference = A6B5836E222CDEEF005EDD4E /* FlowCommoniOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -206,14 +212,14 @@
 				TargetAttributes = {
 					A6B58365222CDEEF005EDD4E = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1130;
 					};
 					A6B5836D222CDEEF005EDD4E = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = A6B58341222CDE0C005EDD4E /* Build configuration list for PBXProject "FlowCommon" */;
+			buildConfigurationList = A6B58341222CDE0C005EDD4E /* Build configuration list for PBXProject "FlowCommoniOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -226,8 +232,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A6B58365222CDEEF005EDD4E /* FlowCommon */,
-				A6B5836D222CDEEF005EDD4E /* FlowCommonTests */,
+				A6B58365222CDEEF005EDD4E /* FlowCommoniOS */,
+				A6B5836D222CDEEF005EDD4E /* FlowCommoniOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,7 +243,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B583A2222DB3F8005EDD4E /* FlowCommonFiles in Resources */,
+				A6EF89A3246DC21D00207FA9 /* LICENSE in Resources */,
+				A6EF89A2246DC21D00207FA9 /* README.md in Resources */,
+				A6EF89A4246DC21D00207FA9 /* FlowCommoniOS.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,19 +263,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B583B5222DB636005EDD4E /* Sound.swift in Sources */,
-				A6B583B6222DB636005EDD4E /* TextView.swift in Sources */,
-				A6B583B2222DB636005EDD4E /* Timeline.swift in Sources */,
-				A6BAA98422B2F0CB0079DE26 /* CAKeyframeAnimation+Extension.swift in Sources */,
-				A6B583B3222DB636005EDD4E /* CGPath+SVG.swift in Sources */,
-				A6BAA98622B2F0CB0079DE26 /* CATransaction+Extension.swift in Sources */,
-				A6B583B7222DB636005EDD4E /* NSMutableParagraphStyle+Extension.swift in Sources */,
-				A6BAA98522B2F0CB0079DE26 /* CAMediaTimingFunction+Extension.swift in Sources */,
-				A6B583B1222DB636005EDD4E /* UIImage+Extension.swift in Sources */,
-				A6B583B0222DB636005EDD4E /* ShapeView.swift in Sources */,
-				A6B583B4222DB636005EDD4E /* Animation.swift in Sources */,
-				A6B583B8222DB636005EDD4E /* UIView+Extension.swift in Sources */,
-				A6B583AF222DB636005EDD4E /* NSShadow+Extension.swift in Sources */,
+				A6EF89FF246DC76B00207FA9 /* Timeline.swift in Sources */,
+				A6EF8A04246DC76B00207FA9 /* Sound.swift in Sources */,
+				A6EF8A06246DC76B00207FA9 /* NSShadow+Extension.swift in Sources */,
+				A6EF89FB246DC76B00207FA9 /* ShapeView.swift in Sources */,
+				A6EF89FC246DC76B00207FA9 /* Animation.swift in Sources */,
+				A6EF8A02246DC76B00207FA9 /* CATransaction+Extension.swift in Sources */,
+				A6EF89FE246DC76B00207FA9 /* UIImage+Extension.swift in Sources */,
+				A6EF8A05246DC76B00207FA9 /* CAMediaTimingFunction+Extension.swift in Sources */,
+				A6EF8A01246DC76B00207FA9 /* NSMutableParagraphStyle+Extension.swift in Sources */,
+				A6EF89FD246DC76B00207FA9 /* UIView+Extension.swift in Sources */,
+				A6EF89FA246DC76B00207FA9 /* CGPath+SVG.swift in Sources */,
+				A6EF8A00246DC76B00207FA9 /* CAKeyframeAnimation+Extension.swift in Sources */,
+				A6EF8A03246DC76B00207FA9 /* TextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +292,7 @@
 /* Begin PBXTargetDependency section */
 		A6B58371222CDEEF005EDD4E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A6B58365222CDEEF005EDD4E /* FlowCommon */;
+			target = A6B58365222CDEEF005EDD4E /* FlowCommoniOS */;
 			targetProxy = A6B58370222CDEEF005EDD4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -515,7 +523,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A6B58341222CDE0C005EDD4E /* Build configuration list for PBXProject "FlowCommon" */ = {
+		A6B58341222CDE0C005EDD4E /* Build configuration list for PBXProject "FlowCommoniOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6B58359222CDE0C005EDD4E /* Debug */,
@@ -524,7 +532,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6B58377222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommon" */ = {
+		A6B58377222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommoniOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6B58378222CDEEF005EDD4E /* Debug */,
@@ -533,7 +541,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6B5837A222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommonTests" */ = {
+		A6B5837A222CDEEF005EDD4E /* Build configuration list for PBXNativeTarget "FlowCommoniOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6B5837B222CDEEF005EDD4E /* Debug */,
