@@ -14,5 +14,12 @@ pipeline {
        	}
       }
     }
+    stage('Lint Podspec') {
+      steps {
+        timeout(time: 5, unit: 'MINUTES') {
+          sh 'bundle exec pod lib lint'
+        }
+      }
+    }
   }
 }
