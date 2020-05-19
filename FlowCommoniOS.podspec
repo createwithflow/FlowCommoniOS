@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Flow' => 'info@createwithflow.com' }
   s.source           = { :git => 'https://github.com/createwithflow/FlowCommoniOS.git', :tag => s.version }
 
-  s.ios.deployment_target = '10.3'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'Sources/FlowCommoniOSFiles/*.swift'
   s.swift_version = '5.0'
