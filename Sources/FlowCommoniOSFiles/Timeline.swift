@@ -48,6 +48,7 @@ open class Timeline {
     
     private var resetDispatchGroup: DispatchGroup?
     private var resetting = false
+    private var shouldAutoPlay = false
     
     // MARK: - Initializers
 
@@ -91,11 +92,28 @@ open class Timeline {
             self.didReset()
         }
     }
+
+    private func didReset() {
+        resetting = false
+        if shouldAutoPlay {
+            shouldAutoPlay = false
+            play()
+        }
         delegate?.didReset(timeline: self)
     }
 
     /// Resume playing the timeline.
     public func play() {
+        //if the current timeline is in process of resetting...
+        if resetting {
+            //set autoplay to true
+            shouldAutoPlay = true
+            return
+        }
+        pause()
+        if time >= duration {
+            reset()
+        }
         playSounds()
         for animation in animations {
             animation.play()
