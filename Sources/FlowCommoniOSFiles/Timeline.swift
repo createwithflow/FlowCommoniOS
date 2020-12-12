@@ -45,7 +45,10 @@ open class Timeline {
     }
 
     public weak var delegate: TimelineDelegate?
-
+    
+    private var resetDispatchGroup: DispatchGroup?
+    private var resetting = false
+    
     // MARK: - Initializers
 
     public convenience init(view: UIView, animationsByLayer: [CALayer: [CAKeyframeAnimation]], sounds: [(sound: AVAudioPlayer, delay: TimeInterval)], duration: TimeInterval, autoreverses: Bool = false, repeatCount: Float = 0) {
@@ -64,16 +67,30 @@ open class Timeline {
         self.autoreverses = autoreverses
         self.repeatCount = repeatCount
         self.animations = animations
-        self.animations.first?.delegate = self
+        for animation in animations {
+            animation.delegate = self
+        }
     }
 
     // MARK: - Timeline Playback controls
 
     /// Reset to the initial state of the timeline
     public func reset() {
+        if resetting {
+            //no need to reset
+            return
+        }
+        resetting = true
+        //create a dispatch group to track when all animations have reset
+        resetDispatchGroup = DispatchGroup()
         for animation in animations {
+            resetDispatchGroup?.enter()
             animation.reset()
         }
+        resetDispatchGroup?.notify(queue: .main) {
+            self.didReset()
+        }
+    }
         delegate?.didReset(timeline: self)
     }
 
@@ -119,6 +136,10 @@ open class Timeline {
 extension Timeline: AnimationDelegate {
     func didStop(animation: Animation) {
         delegate?.didStop(timeline: self)
+    }
+    
+    func ready(animation: Animation) {
+        resetDispatchGroup?.leave()
     }
 }
 
