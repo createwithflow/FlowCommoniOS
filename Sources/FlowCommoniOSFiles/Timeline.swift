@@ -136,12 +136,11 @@ open class Timeline {
     }
 
     /// Show timeline at time `time`.
-    public func offset(to time: TimeInterval) {
-        let time = max(min(time, duration), 0)
+    public func offset(to newTime: TimeInterval) {
+        let clampedNewTime = max(min(newTime, duration), 0)
         for animation in animations {
-            animation.offset(to: time)
+            animation.offset(to: clampedNewTime)
         }
-        delegate?.didOffset(timeline: self, to: time)
     }
 
     /// Returns a reverses version of `self`.
