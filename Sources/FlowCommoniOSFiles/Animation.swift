@@ -151,8 +151,8 @@ open class Animation: NSObject, CAAnimationDelegate {
             return
         }
 
-        let time = autoreverses ? 0 : (keyframeAnimations.first?.duration ?? 0)
-        offset(to: time)
+        let newTime = autoreverses ? 0 : (keyframeAnimations.first?.duration ?? 0)
+        offset(to: newTime)
 
         if let keyframeAnimation = anim as? CAKeyframeAnimation,
             keyframeAnimations.first?.keyPath == keyframeAnimation.keyPath {
