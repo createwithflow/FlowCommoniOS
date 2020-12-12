@@ -84,13 +84,17 @@ open class Animation: NSObject, CAAnimationDelegate {
         layer.timeOffset = 0.0
         layer.beginTime = 0.0
         let timeSincePause = layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+
+        for keyframeAnimation in keyframeAnimations {
+            keyframeAnimation.timeOffset = 0
+        }
         layer.beginTime = timeSincePause
     }
 
     /// Pauses the animation.
     open func pause() {
-        let pausedTime = layer.convertTime(CACurrentMediaTime(), from: nil)
-        offset(to: pausedTime)
+        offset(to: layer.convertTime(CACurrentMediaTime(), from: nil))
+        layer.speed = 0
     }
 
     /// Resets the animation to time 0.
@@ -131,9 +135,13 @@ open class Animation: NSObject, CAAnimationDelegate {
     // MARK: - Driving Animation
 
     /// Shows the animation at time `time`.
-    open func offset(to time: TimeInterval) {
-        layer.speed = 0.0
-        layer.timeOffset = time
+    public func offset(to newTime: TimeInterval) {
+        layer.beginTime = layer.convertTime(CACurrentMediaTime() , from: nil) - newTime
+        layer.timeOffset = newTime
+        for keyframeAnimation in keyframeAnimations {
+            keyframeAnimation.timeOffset = newTime
+            keyframeAnimation.repeatDuration = keyframeAnimation.duration - keyframeAnimation .timeOffset
+        }
     }
 
     // MARK: - CAAnimationDelegate
