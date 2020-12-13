@@ -127,8 +127,9 @@ open class Animation: NSObject, CAAnimationDelegate {
             }
         }
     }
-    
-    @objc func didAddAllAnimations(_ notification: Notification) {
+
+    @objc
+    func didAddAllAnimations(_ notification: Notification) {
         delegate?.ready(animation: self)
     }
 
@@ -136,7 +137,7 @@ open class Animation: NSObject, CAAnimationDelegate {
 
     /// Shows the animation at time `time`.
     public func offset(to newTime: TimeInterval) {
-        layer.beginTime = layer.convertTime(CACurrentMediaTime() , from: nil) - newTime
+        layer.beginTime = layer.convertTime(CACurrentMediaTime(), from: nil) - newTime
         layer.timeOffset = newTime
         for keyframeAnimation in keyframeAnimations {
             keyframeAnimation.timeOffset = newTime

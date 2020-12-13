@@ -45,11 +45,11 @@ open class Timeline {
     }
 
     public weak var delegate: TimelineDelegate?
-    
+
     private var resetDispatchGroup: DispatchGroup?
     private var resetting = false
     private var shouldAutoPlay = false
-    
+
     // MARK: - Initializers
 
     public convenience init(view: UIView, animationsByLayer: [CALayer: [CAKeyframeAnimation]], sounds: [(sound: AVAudioPlayer, delay: TimeInterval)], duration: TimeInterval, autoreverses: Bool = false, repeatCount: Float = 0) {
@@ -154,7 +154,7 @@ extension Timeline: AnimationDelegate {
     func didStop(animation: Animation) {
         delegate?.didStop(timeline: self)
     }
-    
+
     func ready(animation: Animation) {
         resetDispatchGroup?.leave()
     }
