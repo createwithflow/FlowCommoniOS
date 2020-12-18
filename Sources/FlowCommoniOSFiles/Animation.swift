@@ -20,11 +20,6 @@
 import UIKit
 
 open class Animation: NSObject, CAAnimationDelegate {
-    /// Notification used for announcing when the animation has completed adding all its animations to the layer
-    public struct Defaults {
-        public static let addAllAnimationsNotification = NSNotification.Name("addAllAnimationsNotification")
-    }
-
     /// Key frame animations which animate the properties of `layer`.
     fileprivate var keyframeAnimations: [CAKeyframeAnimation]
 
@@ -62,9 +57,7 @@ open class Animation: NSObject, CAAnimationDelegate {
 
         super.init()
         keyframeAnimations.forEach(configure)
-        reset(notify: false)
-        //When notification comes from "self" we know that all animations for this instance have been added to the layer
-        NotificationCenter.default.addObserver(self, selector: #selector(didAddAllAnimations(_:)), name: Animation.Defaults.addAllAnimationsNotification, object: self)
+        reset()
     }
 
     private func configure(keyframeAnimation: CAKeyframeAnimation) {
@@ -97,8 +90,9 @@ open class Animation: NSObject, CAAnimationDelegate {
         layer.speed = 0
     }
 
-    /// Resets the animation to time 0.
-    open func reset(notify: Bool = true) {
+    /// Resets the animation to time 0,
+    /// and asychronously executes the completion block when the animation is ready to be played.
+    open func reset(onCompletion: ((Animation) -> Void)? = nil) {
         CATransaction.suppressAnimations {
             layer.removeAllAnimations()
             
@@ -107,30 +101,22 @@ open class Animation: NSObject, CAAnimationDelegate {
             }
 
             offset(to: 0)
-            self.addAllAnimations(notify: notify)
+
+            DispatchQueue.main.async { [weak self] in
+                self?.addAllAnimations(onCompletion: onCompletion)
+            }
+
             layer.speed = 0
         }
     }
 
     /// Adds all the animations to `layer` so they can be played.
-    private func addAllAnimations(notify: Bool = true) {
-        DispatchQueue.main.async { [weak self] in
-            guard let keyframeAnimations = self?.keyframeAnimations, let layer = self?.layer else {
-                return
-            }
+    private func addAllAnimations(onCompletion: ((Animation) -> Void)? = nil) {
             for keyframeAnimation in keyframeAnimations {
                 layer.add(keyframeAnimation, forKey: keyframeAnimation.keyPath)
             }
-            //Need to have a notification because adding animations happens asynchronously
-            if notify {
-                NotificationCenter.default.post(name: Animation.Defaults.addAllAnimationsNotification, object: self)
-            }
-        }
-    }
 
-    @objc
-    func didAddAllAnimations(_ notification: Notification) {
-        delegate?.ready(animation: self)
+            onCompletion?(self)
     }
 
     // MARK: - Driving Animation
@@ -171,5 +157,4 @@ public extension Animation {
 
 protocol AnimationDelegate: class {
     func didStop(animation: Animation)
-    func ready(animation: Animation)
 }

@@ -47,8 +47,6 @@ open class Timeline {
     public weak var delegate: TimelineDelegate?
 
     private var resetDispatchGroup: DispatchGroup?
-    private var resetting = false
-    private var shouldAutoPlay = false
 
     // MARK: - Initializers
 
@@ -76,49 +74,48 @@ open class Timeline {
     // MARK: - Timeline Playback controls
 
     /// Reset to the initial state of the timeline
-    public func reset() {
-        if resetting {
-            //no need to reset
-            return
-        }
-        resetting = true
-        //create a dispatch group to track when all animations have reset
+    public func reset(onCompletion: ((Timeline) -> Void)? = nil) {
+        // Create a dispatch group to track when all animations have reset
         resetDispatchGroup = DispatchGroup()
+
         for animation in animations {
             resetDispatchGroup?.enter()
-            animation.reset()
+            animation.reset() { [weak self] _ in self?.resetDispatchGroup?.leave() }
         }
-        resetDispatchGroup?.notify(queue: .main) {
-            self.didReset()
-        }
-    }
 
-    private func didReset() {
-        resetting = false
-        if shouldAutoPlay {
-            shouldAutoPlay = false
-            play()
+        resetDispatchGroup?.notify(queue: .main) { [weak self] in
+            guard let strongSelf = self else {
+                return
+            }
+
+            strongSelf.delegate?.didReset(timeline: strongSelf)
+            onCompletion?(strongSelf)
         }
-        delegate?.didReset(timeline: self)
     }
 
     /// Resume playing the timeline.
     public func play() {
-        //if the current timeline is in process of resetting...
-        if resetting {
-            //set autoplay to true
-            shouldAutoPlay = true
-            return
-        }
         pause()
+
+        // If the timeline playback has reached the end of the timeline duration
+        // replay the timeline from the beginning
         if time >= duration {
-            reset()
+            reset() { timeline in timeline.playTimeline() }
+        } else {
+            playTimeline()
         }
+    }
+
+    private func playTimeline() {
+        playAnimations()
         playSounds()
+        delegate?.didPlay(timeline: self)
+    }
+
+    private func playAnimations() {
         for animation in animations {
             animation.play()
         }
-        delegate?.didPlay(timeline: self)
     }
 
     private func playSounds() {
@@ -153,10 +150,6 @@ open class Timeline {
 extension Timeline: AnimationDelegate {
     func didStop(animation: Animation) {
         delegate?.didStop(timeline: self)
-    }
-
-    func ready(animation: Animation) {
-        resetDispatchGroup?.leave()
     }
 }
 
