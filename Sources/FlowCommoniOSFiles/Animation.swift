@@ -77,49 +77,58 @@ open class Animation: NSObject, CAAnimationDelegate {
         layer.timeOffset = 0.0
         layer.beginTime = 0.0
         let timeSincePause = layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+
+        for keyframeAnimation in keyframeAnimations {
+            keyframeAnimation.timeOffset = 0
+        }
         layer.beginTime = timeSincePause
     }
 
     /// Pauses the animation.
     open func pause() {
-        let pausedTime = layer.convertTime(CACurrentMediaTime(), from: nil)
-        offset(to: pausedTime)
+        offset(to: layer.convertTime(CACurrentMediaTime(), from: nil))
+        layer.speed = 0
     }
 
-    /// Resets the animation to time 0.
-    open func reset() {
+    /// Resets the animation to time 0,
+    /// and asychronously executes the completion block when the animation is ready to be played.
+    open func reset(onCompletion: ((Animation) -> Void)? = nil) {
         CATransaction.suppressAnimations {
             layer.removeAllAnimations()
-            layer.beginTime = 0
-            offset(to: 0)
-
+            
             for keyframeAnimation in keyframeAnimations {
                 layer.setValue(keyframeAnimation.values?.first, forKeyPath: keyframeAnimation.keyPath!)
             }
 
-            addAllAnimations()
+            offset(to: 0)
+
+            DispatchQueue.main.async { [weak self] in
+                self?.addAllAnimations(onCompletion: onCompletion)
+            }
+
             layer.speed = 0
         }
     }
 
     /// Adds all the animations to `layer` so they can be played.
-    private func addAllAnimations() {
-        DispatchQueue.main.async { [weak self] in
-            guard let keyframeAnimations = self?.keyframeAnimations, let layer = self?.layer else {
-                return
-            }
+    private func addAllAnimations(onCompletion: ((Animation) -> Void)? = nil) {
             for keyframeAnimation in keyframeAnimations {
                 layer.add(keyframeAnimation, forKey: keyframeAnimation.keyPath)
             }
-        }
+
+            onCompletion?(self)
     }
 
     // MARK: - Driving Animation
 
     /// Shows the animation at time `time`.
-    open func offset(to time: TimeInterval) {
-        layer.speed = 0.0
-        layer.timeOffset = time
+    public func offset(to newTime: TimeInterval) {
+        layer.beginTime = layer.convertTime(CACurrentMediaTime(), from: nil) - newTime
+        layer.timeOffset = newTime
+        for keyframeAnimation in keyframeAnimations {
+            keyframeAnimation.timeOffset = newTime
+            keyframeAnimation.repeatDuration = keyframeAnimation.duration - keyframeAnimation .timeOffset
+        }
     }
 
     // MARK: - CAAnimationDelegate
@@ -129,8 +138,8 @@ open class Animation: NSObject, CAAnimationDelegate {
             return
         }
 
-        let time = autoreverses ? 0 : (keyframeAnimations.first?.duration ?? 0)
-        offset(to: time)
+        let newTime = autoreverses ? 0 : (keyframeAnimations.first?.duration ?? 0)
+        offset(to: newTime)
 
         if let keyframeAnimation = anim as? CAKeyframeAnimation,
             keyframeAnimations.first?.keyPath == keyframeAnimation.keyPath {

@@ -46,6 +46,8 @@ open class Timeline {
 
     public weak var delegate: TimelineDelegate?
 
+    private var resetDispatchGroup: DispatchGroup?
+
     // MARK: - Initializers
 
     public convenience init(view: UIView, animationsByLayer: [CALayer: [CAKeyframeAnimation]], sounds: [(sound: AVAudioPlayer, delay: TimeInterval)], duration: TimeInterval, autoreverses: Bool = false, repeatCount: Float = 0) {
@@ -64,26 +66,56 @@ open class Timeline {
         self.autoreverses = autoreverses
         self.repeatCount = repeatCount
         self.animations = animations
-        self.animations.first?.delegate = self
+        for animation in animations {
+            animation.delegate = self
+        }
     }
 
     // MARK: - Timeline Playback controls
 
     /// Reset to the initial state of the timeline
-    public func reset() {
+    public func reset(onCompletion: ((Timeline) -> Void)? = nil) {
+        // Create a dispatch group to track when all animations have reset
+        resetDispatchGroup = DispatchGroup()
+
         for animation in animations {
-            animation.reset()
+            resetDispatchGroup?.enter()
+            animation.reset() { [weak self] _ in self?.resetDispatchGroup?.leave() }
         }
-        delegate?.didReset(timeline: self)
+
+        resetDispatchGroup?.notify(queue: .main) { [weak self] in
+            guard let strongSelf = self else {
+                return
+            }
+
+            strongSelf.delegate?.didReset(timeline: strongSelf)
+            onCompletion?(strongSelf)
+        }
     }
 
     /// Resume playing the timeline.
     public func play() {
+        pause()
+
+        // If the timeline playback has reached the end of the timeline duration
+        // replay the timeline from the beginning
+        if time >= duration {
+            reset() { timeline in timeline.playTimeline() }
+        } else {
+            playTimeline()
+        }
+    }
+
+    private func playTimeline() {
+        playAnimations()
         playSounds()
+        delegate?.didPlay(timeline: self)
+    }
+
+    private func playAnimations() {
         for animation in animations {
             animation.play()
         }
-        delegate?.didPlay(timeline: self)
     }
 
     private func playSounds() {
@@ -101,12 +133,11 @@ open class Timeline {
     }
 
     /// Show timeline at time `time`.
-    public func offset(to time: TimeInterval) {
-        let time = max(min(time, duration), 0)
+    public func offset(to newTime: TimeInterval) {
+        let clampedNewTime = max(min(newTime, duration), 0)
         for animation in animations {
-            animation.offset(to: time)
+            animation.offset(to: clampedNewTime)
         }
-        delegate?.didOffset(timeline: self, to: time)
     }
 
     /// Returns a reverses version of `self`.
