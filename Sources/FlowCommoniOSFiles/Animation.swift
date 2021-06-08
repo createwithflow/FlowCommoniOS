@@ -138,6 +138,9 @@ open class Animation: NSObject, CAAnimationDelegate {
             return
         }
 
+        //Default behaviour of Core Animation is to allow speed to remain unchanged
+        layer.speed = 0
+
         let newTime = autoreverses ? 0 : (keyframeAnimations.first?.duration ?? 0)
         offset(to: newTime)
 

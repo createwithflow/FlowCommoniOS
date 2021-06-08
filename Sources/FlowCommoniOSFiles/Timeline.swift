@@ -149,7 +149,11 @@ open class Timeline {
 
 extension Timeline: AnimationDelegate {
     func didStop(animation: Animation) {
-        delegate?.didStop(timeline: self)
+        // Notify the delegate a single time, when the first animation is complete
+        // We can do this because all animations are CAKeyframeAnimations that have identical durations (e.g. Timeline.duration)
+        if animation == animations.first {
+            delegate?.didStop(timeline: self)
+        }
     }
 }
 
