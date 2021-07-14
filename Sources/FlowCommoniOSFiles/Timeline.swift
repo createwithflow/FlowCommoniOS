@@ -184,3 +184,15 @@ public protocol TimelineDelegate: class {
     /// Informs the delegate that the timeline `timeline` was stopped because it completed its active duration.
     func didStop(timeline: Timeline)
 }
+
+extension TimelineDelegate {
+    public func didReset(timeline: Timeline) { }
+
+    public func didPlay(timeline: Timeline) { }
+
+    public func didPause(timeline: Timeline) { }
+
+    public func didOffset(timeline: Timeline, to time: TimeInterval) { }
+
+    public func didStop(timeline: Timeline) { }
+}
