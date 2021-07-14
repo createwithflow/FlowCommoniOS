@@ -41,7 +41,7 @@ open class Animation: NSObject, CAAnimationDelegate {
     ///
     /// Calculated using repeatCount and duration.
     var repeatDuration: TimeInterval {
-        return duration * TimeInterval(repeatCount)
+        return duration * TimeInterval(repeatCount == 0 ? 1 : repeatCount)
     }
 
     /// Determines the number of times the animation will repeat.

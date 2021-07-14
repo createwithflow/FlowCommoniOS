@@ -40,7 +40,7 @@ open class Timeline {
     ///
     /// Calculated using repeatCount and duration.
     public var repeatDuration: TimeInterval {
-        return TimeInterval(repeatCount) * duration
+        return duration * TimeInterval(repeatCount == 0 ? 1 : repeatCount)
     }
 
     public var time: TimeInterval {
