@@ -87,7 +87,7 @@ open class Timeline {
 
         for animation in animations {
             resetDispatchGroup?.enter()
-            animation.reset() { [weak self] _ in self?.resetDispatchGroup?.leave() }
+            animation.reset { [weak self] _ in self?.resetDispatchGroup?.leave() }
         }
 
         resetDispatchGroup?.notify(queue: .main) { [weak self] in
@@ -107,7 +107,7 @@ open class Timeline {
         // If the timeline playback has reached the end of the timeline duration
         // replay the timeline from the beginning
         if time >= repeatDuration {
-            reset() { timeline in timeline.playTimeline() }
+            reset { timeline in timeline.playTimeline() }
         } else {
             playTimeline()
         }
