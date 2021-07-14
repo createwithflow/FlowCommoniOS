@@ -106,8 +106,9 @@ open class Animation: NSObject, CAAnimationDelegate {
 
     /// Pauses the animation.
     open func pause() {
+        let currentTime = layer.convertTime(CACurrentMediaTime(), from: nil)
         layer.speed = 0
-        offset(to: layer.convertTime(CACurrentMediaTime(), from: nil))
+        offset(to: currentTime)
     }
 
     /// Resets the animation to time 0,
