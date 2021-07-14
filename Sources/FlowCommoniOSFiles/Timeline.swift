@@ -36,6 +36,13 @@ open class Timeline {
     /// Setting this property to greatestFiniteMagnitude will cause the timeline to repeat forever.
     public let repeatCount: Float
 
+    /// The length of time a Timeline will repeat.
+    ///
+    /// Calculated using repeatCount and duration.
+    public var repeatDuration: TimeInterval {
+        return TimeInterval(repeatCount) * duration
+    }
+
     public var time: TimeInterval {
         return animations.first?.time ?? 0
     }
@@ -99,7 +106,7 @@ open class Timeline {
 
         // If the timeline playback has reached the end of the timeline duration
         // replay the timeline from the beginning
-        if time >= duration {
+        if time >= repeatDuration {
             reset() { timeline in timeline.playTimeline() }
         } else {
             playTimeline()
