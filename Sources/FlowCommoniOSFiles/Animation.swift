@@ -29,6 +29,21 @@ open class Animation: NSObject, CAAnimationDelegate {
     /// Specifies whether or not the animation should autoreverse.
     var autoreverses: Bool
 
+    /// The length of the animation
+    var duration: TimeInterval {
+        guard let anim = keyframeAnimations.first else {
+            return 0
+        }
+        return anim.duration
+    }
+
+    /// The length of time an animation will repeat.
+    ///
+    /// Calculated using repeatCount and duration.
+    var repeatDuration: TimeInterval {
+        return duration * TimeInterval(repeatCount)
+    }
+
     /// Determines the number of times the animation will repeat.
     ///
     /// May be fractional. If the repeatCount is 0, it is ignored.
@@ -46,6 +61,9 @@ open class Animation: NSObject, CAAnimationDelegate {
     var playing: Bool {
         return layer.speed != 0.0
     }
+
+    /// To track the unconverted start time of an animation
+    private var startTime: TimeInterval = 0
 
     // MARK: - Initializers
 
@@ -65,13 +83,15 @@ open class Animation: NSObject, CAAnimationDelegate {
         keyframeAnimation.isRemovedOnCompletion = false
         keyframeAnimation.fillMode = .both
         keyframeAnimation.autoreverses = autoreverses
-        keyframeAnimation.repeatCount = repeatCount
+        keyframeAnimation.repeatDuration = repeatDuration
     }
 
     // MARK: - Playing & Resetting Animation
 
     /// Resumes the animation from where it was paused.
     open func play() {
+        //track the actual start time when the animation begins playing
+        startTime = layer.convertTime(CACurrentMediaTime(), from: layer)
         let pausedTime = layer.timeOffset
         layer.speed = 1.0
         layer.timeOffset = 0.0
@@ -86,16 +106,20 @@ open class Animation: NSObject, CAAnimationDelegate {
 
     /// Pauses the animation.
     open func pause() {
-        offset(to: layer.convertTime(CACurrentMediaTime(), from: nil))
         layer.speed = 0
+        offset(to: layer.convertTime(CACurrentMediaTime(), from: nil))
     }
 
     /// Resets the animation to time 0,
     /// and asychronously executes the completion block when the animation is ready to be played.
     open func reset(onCompletion: ((Animation) -> Void)? = nil) {
+        //reset the start time
+        startTime = layer.convertTime(CACurrentMediaTime(), from: layer)
         CATransaction.suppressAnimations {
             layer.removeAllAnimations()
-            
+
+            layer.speed = 0
+
             for keyframeAnimation in keyframeAnimations {
                 layer.setValue(keyframeAnimation.values?.first, forKeyPath: keyframeAnimation.keyPath!)
             }
@@ -105,8 +129,6 @@ open class Animation: NSObject, CAAnimationDelegate {
             DispatchQueue.main.async { [weak self] in
                 self?.addAllAnimations(onCompletion: onCompletion)
             }
-
-            layer.speed = 0
         }
     }
 
@@ -123,11 +145,29 @@ open class Animation: NSObject, CAAnimationDelegate {
 
     /// Shows the animation at time `time`.
     public func offset(to newTime: TimeInterval) {
-        layer.beginTime = layer.convertTime(CACurrentMediaTime(), from: nil) - newTime
+        let currentTime = layer.convertTime(CACurrentMediaTime(), from: layer) - startTime
+        let beginTime = currentTime - newTime
+        layer.beginTime = beginTime
         layer.timeOffset = newTime
         for keyframeAnimation in keyframeAnimations {
+            keyframeAnimation.beginTime = beginTime
             keyframeAnimation.timeOffset = newTime
-            keyframeAnimation.repeatDuration = keyframeAnimation.duration - keyframeAnimation .timeOffset
+        }
+    }
+
+    /// Shows the animation at its end where `time` is equal to `duration`.
+    public func offsetToEnd() {
+        //if the animation autoreverses then the end is equivalent to the beginning
+        if autoreverses {
+            reset()
+        } else {
+            let beginTime = startTime
+            layer.beginTime = beginTime
+            layer.timeOffset = repeatDuration
+            for keyframeAnimation in keyframeAnimations {
+                keyframeAnimation.beginTime = beginTime
+                keyframeAnimation.timeOffset = repeatDuration
+            }
         }
     }
 
@@ -139,10 +179,10 @@ open class Animation: NSObject, CAAnimationDelegate {
         }
 
         //Default behaviour of Core Animation is to allow speed to remain unchanged
+        //Even if the animation has stopped
         layer.speed = 0
 
-        let newTime = autoreverses ? 0 : (keyframeAnimations.first?.duration ?? 0)
-        offset(to: newTime)
+        offsetToEnd()
 
         if let keyframeAnimation = anim as? CAKeyframeAnimation,
             keyframeAnimations.first?.keyPath == keyframeAnimation.keyPath {
