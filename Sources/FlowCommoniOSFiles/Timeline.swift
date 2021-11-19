@@ -86,8 +86,12 @@ open class Timeline {
         resetDispatchGroup = DispatchGroup()
 
         for animation in animations {
-            resetDispatchGroup?.enter()
-            animation.reset { [weak self] _ in self?.resetDispatchGroup?.leave() }
+            guard let resetDispatchGroup = resetDispatchGroup else {
+                return
+            }
+            
+            resetDispatchGroup.enter()
+            animation.reset { _ in resetDispatchGroup.leave() }
         }
 
         resetDispatchGroup?.notify(queue: .main) { [weak self] in
