@@ -160,6 +160,10 @@ extension Timeline: AnimationDelegate {
         // We can do this because all animations are CAKeyframeAnimations that have identical durations (e.g. Timeline.duration)
         if animation == animations.first {
             delegate?.didStop(timeline: self)
+            reset() { _ in
+                self.pause()
+                self.offset(to: self.repeatDuration)
+            }
         }
     }
 }
