@@ -172,7 +172,7 @@ extension Timeline: AnimationDelegate {
     }
 }
 
-public protocol TimelineDelegate: class {
+public protocol TimelineDelegate: AnyObject {
     /// Informs the delegate that the timeline `timeline` was reset.
     func didReset(timeline: Timeline)
 
