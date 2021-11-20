@@ -86,8 +86,12 @@ open class Timeline {
         resetDispatchGroup = DispatchGroup()
 
         for animation in animations {
-            resetDispatchGroup?.enter()
-            animation.reset { [weak self] _ in self?.resetDispatchGroup?.leave() }
+            guard let resetDispatchGroup = resetDispatchGroup else {
+                return
+            }
+            
+            resetDispatchGroup.enter()
+            animation.reset { _ in resetDispatchGroup.leave() }
         }
 
         resetDispatchGroup?.notify(queue: .main) { [weak self] in
@@ -160,11 +164,15 @@ extension Timeline: AnimationDelegate {
         // We can do this because all animations are CAKeyframeAnimations that have identical durations (e.g. Timeline.duration)
         if animation == animations.first {
             delegate?.didStop(timeline: self)
+            reset() { _ in
+                self.pause()
+                self.offset(to: self.repeatDuration)
+            }
         }
     }
 }
 
-public protocol TimelineDelegate: class {
+public protocol TimelineDelegate: AnyObject {
     /// Informs the delegate that the timeline `timeline` was reset.
     func didReset(timeline: Timeline)
 
