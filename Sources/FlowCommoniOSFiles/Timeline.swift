@@ -106,8 +106,6 @@ open class Timeline {
 
     /// Resume playing the timeline.
     public func play() {
-        pause()
-
         // If the timeline playback has reached the end of the timeline duration
         // replay the timeline from the beginning
         if time >= repeatDuration {
@@ -118,6 +116,9 @@ open class Timeline {
     }
 
     private func playTimeline() {
+        if playing {
+            return
+        }
         playAnimations()
         playSounds()
         delegate?.didPlay(timeline: self)

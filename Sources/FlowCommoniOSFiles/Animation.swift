@@ -165,6 +165,7 @@ open class Animation: NSObject, CAAnimationDelegate {
         }
 
         layer.speed = 0
+        layer.timeOffset = duration
 
         if let keyframeAnimation = anim as? CAKeyframeAnimation,
             keyframeAnimations.first?.keyPath == keyframeAnimation.keyPath {
