@@ -161,14 +161,15 @@ open class Timeline {
 
 extension Timeline: AnimationDelegate {
     func didStop(animation: Animation) {
+        //Pause all animations because Core Animation doesn't automatically do this when animationDidStop is called
+        for animation in animations {
+            animation.pause()
+        }
+
         // Notify the delegate a single time, when the first animation is complete
         // We can do this because all animations are CAKeyframeAnimations that have identical durations (e.g. Timeline.duration)
         if animation == animations.first {
             delegate?.didStop(timeline: self)
-            reset { _ in
-                self.pause()
-                self.offset(to: self.repeatDuration)
-            }
         }
     }
 }

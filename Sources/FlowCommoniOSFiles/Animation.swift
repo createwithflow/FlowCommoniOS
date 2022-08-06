@@ -164,9 +164,7 @@ open class Animation: NSObject, CAAnimationDelegate {
             return
         }
 
-        layer.speed = 0
-        layer.timeOffset = duration
-
+        // Notify the delegate a single time, when the first animation is complete
         if let keyframeAnimation = anim as? CAKeyframeAnimation,
             keyframeAnimations.first?.keyPath == keyframeAnimation.keyPath {
             delegate?.didStop(animation: self)
